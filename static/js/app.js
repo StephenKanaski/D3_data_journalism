@@ -88,18 +88,18 @@ function renderCircles(circlesGroup, newXScale, newYScale, chosenXAxis, chosenYA
   };
 
   // Function to update text in circles group with transition
-  function renderText(circleText, newXScale, newYScale, chosenXAxis, chosenYAxis) {
+  function renderText(cText, newXScale, newYScale, chosenXAxis, chosenYAxis) {
 
-    circleText.transition()
+    cText.transition()
         .duration(1000)
         .attr("x", d => newXScale(d[chosenXAxis]))
         .attr("y", d => newYScale(d[chosenYAxis]));
 
-    return circleText;
+    return cText;
   }
 
   // function used for updating circles group with new tooltip
-function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup, circleText) {
+function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup, cText) {
 
     var xlabel;
     var ylabel;
@@ -154,7 +154,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup, circleText) {
         toolTip.hide(data);
       });
 
-    circleText.on("mouseover", function(data) {
+    cText.on("mouseover", function(data) {
         toolTip.show(data, this);
     })
         .on("mouseout", function(data) {
