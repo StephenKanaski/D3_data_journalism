@@ -129,7 +129,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup, cText) {
     // Define Tooltip Params
     var toolTip = d3.tip()
       .attr("class", "tooltip")
-      .offset([80, -60])
+    //   .offset([80, -60])
       .html(function(d) {
           // Conditionals for tooltip
           if (chosenXAxis === "age") {
@@ -150,7 +150,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup, cText) {
       toolTip.show(data, this);
     })
       // onmouseout event
-      .on("mouseout", function(data, index) {
+      .on("mouseout", function(data) {
         toolTip.hide(data);
       });
 
@@ -174,18 +174,18 @@ function makeResponsive() {
     }
 
     // svg heigh, width, margin params
-    var svgWidth = 960;
-    var svgHeight = 500;
+//     var svgWidth = 960;
+//     var svgHeight = 500;
 
-    var margin = {
-        top: 20,
-        right: 40,
-        bottom: 80,
-        left: 100
-    };
+//     var margin = {
+//         top: 20,
+//         right: 40,
+//         bottom: 80,
+//         left: 100
+//     };
 
-var width = svgWidth - margin.left - margin.right;
-var height = svgHeight - margin.top - margin.bottom;
+// var width = svgWidth - margin.left - margin.right;
+// var height = svgHeight - margin.top - margin.bottom;
 
 // Create an SVG wrapper, append an SVG group that will hold our chart,
 // and shift the latter by left and top margins.
